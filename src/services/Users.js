@@ -30,7 +30,7 @@ export class Users {
     }
   };
   static UsersCard = async (id) => {
-    console.log(id);
+
     try {
       const result = await axios.get(`https://reqres.in/api/users/${id}`);
       return { status: result?.status, data: result?.data };
