@@ -5,7 +5,7 @@ import styles from "../styles/main.module.scss";
 import { LoginUsers } from "../services/loginUser.js";
 
 
-function Main({setSessionId,sessionId}) {
+function Main({setSessionId}) {
 const [login, setLogin] = useState("");
 const [password, setPassword] = useState("");
 
@@ -48,20 +48,16 @@ const  classNameBtn = login !== '' && password !== ''? `${styles.btn} `: `${styl
       <form action="" className={styles.form}>
         <div className={styles.form_box}>
           <div className={styles.box_form_email}>
-            <label htmlFor="email">E-mail</label>
-            <input type="email" onChange={onLogin} value={login} />
+            
+            <input type="email" onChange={onLogin} placeholder='E-mail' value={login} />
           </div>
           <div className={styles.box_form_password}>
-            <label htmlFor="password">password</label>
-            <input type="password" onChange={onPassword} value={password} />
+          
+            <input type="password" placeholder='password' onChange={onPassword} value={password} />
           </div>
           <div className={styles.box_form_server}>
-            <label htmlFor="server">server</label>
-            <select name="" id="">
-              <option value="germany">Germany</option>
-              <option value="paris">Paris</option>
-              <option value="francia">Francia</option>
-            </select>
+           
+      
           </div>
           <div className="box_form_button">
             <button onClick={click} className={classNameBtn}>

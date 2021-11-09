@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Disabled from "../components/Disabled/disabled";
-import styles from "../styles/udateusers.module.scss";
+import styles from "../styles/listusers.module.scss";
 import { Users } from "../services/Users";
 
-function ListUsers(sessionId) {
+function ListUsers({sessionId}) {
   const [arrUser, setArrUser] = useState([]);
   const [cardUser, setCardUsers] = useState("");
 
@@ -22,8 +22,7 @@ function ListUsers(sessionId) {
     setCardUsers(result.data.data);
   };
 
-  console.log(arrUser);
-  if (sessionId == "") {
+  if (sessionId === "") {
     return <Disabled />;
   } else {
     return (

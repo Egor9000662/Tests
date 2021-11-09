@@ -9,7 +9,7 @@ import styles from "./styles/app.module.scss"
 
 import Main from "./pages/Main";
 import ListUsers from "./pages/ListUsers";
-import Timer from "./pages/Timer";
+import RandomUsers from "./pages/RandomUsers";
 import CreateUsers from "./pages/CreateUsers";
 
 
@@ -46,8 +46,8 @@ useEffect(()=>{
               </NavLink>
             </li>
             <li>
-              <NavLink to='/Timer' activeClassName={styles.chosen}>
-               Timer
+              <NavLink to='/RandomUsers' activeClassName={styles.chosen}>
+              Random users
               </NavLink>
             </li>
           </ul>
@@ -58,7 +58,7 @@ useEffect(()=>{
              <Route exact path='/main' component={()=><Main setSessionId={setSessionId}  sessionId={sessionId} />} /> 
              <Route exact path='/CreateUsers' component={()=><CreateUsers sessionId={sessionId} />}/>
              <Route exact path='/ListUsers' component={()=><ListUsers sessionId={sessionId} />}/>
-             <Route exact path='/Timer' component={() =><Timer sessionId={sessionId} />}/>
+             <Route exact path='/RandomUsers' component={() =><RandomUsers sessionId={sessionId} />}/>
           </Switch>
         </main>
         </div>

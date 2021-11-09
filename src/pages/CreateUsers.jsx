@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Disabled from "../components/Disabled/disabled";
 import styles from "../styles/createusers.module.scss";
 import { Users } from "../services/Users";
-import remove from "../images/remove_btn.svg";
+
 
 function CreateUsers({ sessionId }) {
   const [name, setName] = useState("");
@@ -11,6 +11,12 @@ function CreateUsers({ sessionId }) {
   const [listUsers, setListUSers] = useState("");
   const [modals, setModals] = useState(false);
   const [deleteUsers, setDeleteUsers] = useState(false);
+
+
+  useEffect(() => {
+    setListUSers(JSON.parse(JSON.stringify(localStorage)));
+  }, [deleteUsers, cards]);
+
   const getValueName = (event) => {
     const result = event.target.value;
     setName(result);
@@ -19,14 +25,14 @@ function CreateUsers({ sessionId }) {
     const result = event.target.value;
     setJob(result);
   };
+
+
   const classDisabledBtn =
     name == "" && job == ""
       ? `${styles.box_btn} ${styles.disabled} `
       : `${styles.box_btn} `;
 
-  useEffect(() => {
-    setListUSers(JSON.parse(JSON.stringify(localStorage)));
-  }, [deleteUsers, cards]);
+
 
   const addUsersBtn = async () => {
     const result = await Users.CreateUser(name, job);
@@ -45,13 +51,14 @@ function CreateUsers({ sessionId }) {
     setName("");
     setJob("");
   };
+
+
   const delItem = (index, idUser) => {
     setItemsCard(cards.filter((_, i) => i !== index));
     localStorage.removeItem(idUser);
   };
 
   const openlistUsers = () => {
-    console.log(Object.keys(listUsers).length);
     if (Object.keys(listUsers).length == 0) {
       setModals(false);
     } else {
@@ -59,13 +66,14 @@ function CreateUsers({ sessionId }) {
       setListUSers(JSON.parse(JSON.stringify(localStorage)));
     }
   };
+
+
   const delAllElementsLocalStorage = ()=>{
     localStorage.clear()
     setModals(false);
   }
 
   const delELemLocalStorage = (key) => {
-    console.log('okey');
     localStorage.removeItem(key);
     setDeleteUsers((prevState) => !prevState);
     cards.map((item, index) => {
@@ -73,6 +81,8 @@ function CreateUsers({ sessionId }) {
         setItemsCard(cards.filter((_, i) => i !== index));
       }
     });
+
+    
     if (Object.keys(listUsers).length == 1) {
       setModals(false);
     }
@@ -85,12 +95,11 @@ function CreateUsers({ sessionId }) {
       <div className={styles.container}>
         <div className={styles.box_create_users}>
           <div className={styles.user_name}>
-            <label>Enter your user name </label>
-            <input type="text" onChange={getValueName} value={name} />
+            
+            <input type="text" onChange={getValueName} placeholder='Enter your user name' value={name} />
           </div>
           <div className={styles.user_job}>
-            <label>Enter the user's place of work</label>
-            <input type="text" onChange={getValueJob} value={job} />
+            <input type="text" onChange={getValueJob} placeholder='Enter the user place of work' value={job} />
           </div>
           <div className={styles.box_buttons}>
             <div className={classDisabledBtn} onClick={addUsersBtn}>

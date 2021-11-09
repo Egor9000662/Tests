@@ -37,6 +37,7 @@
       flex-basis: 25%;
       margin-right: 20px;
       input {
+        font-size: 25px;
         border: none;
         border-bottom: 1px black solid;
         outline: none;
@@ -44,6 +45,7 @@
         padding: 10px;
       }
       select {
+        font-size: 25px;
         margin-top: 9px;
         border: none;
         border-bottom: 1px solid black;
@@ -59,26 +61,23 @@
     
   }
   .btn {
-    width: 150px;
-    height: 30px;
+    font-size: 20px;
+    font-weight: 700;
+    width: 250px;
+    height: 50px;
     border: none;
     color:white;
     background-color: rgb(67, 67, 201);
+    box-shadow: 13px -11px 10px 2px rgba(34, 60, 80, 0.2);
+    }
+    .btn:hover{
+
+      cursor: pointer;
+      color:#f1c40f
     }
  
 }
-.box_form_id_users{
-  color: grey;
-  display: flex;
-  flex-direction: column;
-  input {
-    margin-top: 10px;
-    padding: 10px;
-    border: none;
-    border-bottom: 1px black solid;
-    outline: none;
-  }
-}
+
 .disabled{
   opacity: 0.3;
   pointer-events: none;

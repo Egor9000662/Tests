@@ -18,12 +18,11 @@
         li{
             list-style: none;
             a{
-                font-size: 18px;
+                font-size: 26px;
                 display: inline-block;
                 color:grey;
                 text-decoration: none;
                 height: 30px;
-            
             }
           a:hover{
               color:  darkblue;
@@ -43,6 +42,7 @@
         display: flex;
         flex-direction: column;
         input {
+          font-size: 25px;
           margin-top: 10px;
           padding: 10px;
           border: none;
