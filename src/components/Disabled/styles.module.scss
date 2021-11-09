@@ -1,0 +1,15 @@
+.box_title{
+    text-align: center;
+    a{
+        text-decoration: none;
+    }
+    .title{
+        font-size: 30px;
+        font-weight: 700;
+        color:grey
+    }
+    .title:hover{
+        font-size: 32px;
+        color: rgb(67, 67, 201);
+    }
+}

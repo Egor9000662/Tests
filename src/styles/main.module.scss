@@ -1,0 +1,87 @@
+.logotip_company {
+  display: flex;
+  margin-bottom: 40px;
+  .logo_img {
+    width: 200px;
+    height: 50px;
+  }
+  .logo_text {
+    width: 50%;
+    font-size: 14px;
+    margin-left: 15px;
+  }
+}
+.box_title {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 25px;
+  p{
+    width: 95%;
+    background-color: rgb(67, 67, 201);
+    height: 35px;
+    padding: 6px 0 0 15px;
+    color: white;
+  }
+}
+.form {
+  margin-bottom: 50px;
+  .form_box {
+    display: flex;
+    margin-bottom: 25px;
+    .box_form_password,
+    .box_form_server,
+    .box_form_email {
+      display: flex;
+      flex-direction: column;
+      color: grey;
+      flex-basis: 25%;
+      margin-right: 20px;
+      input {
+        border: none;
+        border-bottom: 1px black solid;
+        outline: none;
+        margin-top: 10px;
+        padding: 10px;
+      }
+      select {
+        margin-top: 9px;
+        border: none;
+        border-bottom: 1px solid black;
+        padding: 10px;
+        outline: none;
+      }
+    }
+  }
+
+  .box_form_button {
+    width: 100%;
+    text-align: end;  
+    
+  }
+  .btn {
+    width: 150px;
+    height: 30px;
+    border: none;
+    color:white;
+    background-color: rgb(67, 67, 201);
+    }
+ 
+}
+.box_form_id_users{
+  color: grey;
+  display: flex;
+  flex-direction: column;
+  input {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px black solid;
+    outline: none;
+  }
+}
+.disabled{
+  opacity: 0.3;
+  pointer-events: none;
+
+
+}

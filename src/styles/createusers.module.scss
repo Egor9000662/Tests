@@ -1,0 +1,189 @@
+.container {
+  width: 100%;
+  .box_create_users {
+    margin-bottom: 25px;
+    display: flex;
+
+    label {
+      color: grey;
+      margin-bottom: 15px;
+      font-size: 11px;
+    }
+    input {
+      border: none;
+      outline: none;
+      border-bottom: 1px solid black;
+      padding: 10px;
+    }
+    .user_name {
+      margin-right: 50px;
+      flex-basis: 30%;
+      display: flex;
+      flex-direction: column;
+    }
+    .user_job {
+      margin-right: 50px;
+      flex-basis: 40%;
+      display: flex;
+      flex-direction: column;
+    }
+    .box_buttons {
+      .box_btn {
+        flex-basis: 20%;
+        background-color: rgb(67, 67, 201);
+        width: 120px;
+        height: 40px;
+        text-align: center;
+        color: white;
+        padding-top: 10px;
+        box-shadow: 13px -11px 10px 2px rgba(34, 60, 80, 0.2);
+        margin-bottom: 10px;
+      }
+    }
+  }
+  .box_users {
+    margin-bottom: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 3px solid rgb(67, 67, 201);
+    padding-top: 25px;
+    .item {
+      margin-bottom: 12px;
+      margin-right: 23px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      width: 30%;
+      min-height: 150px;
+      border: 3px solid rgba(34, 60, 80, 0.2);
+      .item_string {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid grey;
+        padding: 10px;
+      }
+      .btn_delte {
+        font-size: 25px;
+        padding-top: 5px;
+        background-color: rgb(67, 67, 201);
+        color: white;
+        height: 40px;
+        text-align: center;
+      }
+    }
+    .modal_container {
+      overflow-y: scroll;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 5;
+      background-color: rgba(0, 0, 0, 0.7);
+      position: fixed;
+      .second_box_modal {
+        top: 20%;
+        left: 15%;
+        position: absolute;
+        width: 70%;
+        padding: 0 0 160px;
+        background-color: rgba(5, 5, 66, 0.9);
+        box-shadow: 13px -9px 10px 2px rgba(34, 60, 80, 0.2);
+        .box_clouse {
+          padding-top: 35px;
+          display: flex;
+          justify-content: center;
+          font-size: 20px;
+  
+        }
+
+        .modal_box {
+          margin: 0 auto;
+          width: 90%;
+          padding: 10px;
+
+          .madal_item_user {
+          font-size: 20px;
+            transition: 0.4s;
+            position: relative;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 50px;
+            padding: 20px 20px;
+            min-height: 60px;
+            .btn_remove_item{
+              font-size: 20px;
+          
+              margin-right: 15px;
+              opacity: 0;
+              transition: 0.4s;
+            }
+
+          }
+          .madal_item_user::after {
+            content: "";
+            position: absolute;
+            pointer-events: none;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            border: 2px solid rgba(156, 48, 48, 0);
+            transition: 0.4s;
+          }
+          .madal_item_user:hover{
+            .btn_remove_item{
+              opacity: 1;
+              color: #f1c40f ;
+            }
+          }
+          .madal_item_user:hover::after {
+            border-color: #f1c40f;
+            width: calc(100% - 25px);
+            height: calc(100% + 25px);
+            
+          }
+        }
+      }
+    }
+  }
+}
+
+.btn_modal {
+  margin: 0 auto;
+  font-size: 20px;
+  color: #f1c40f;
+  display: inline-block;
+  position: relative;
+  border: 2px solid #f1c40f;
+  margin: 10px 20px 60px 10px;
+  padding: 10px 30px;
+  transition: 0.4s;
+}
+.btn_modal::after {
+  content: "";
+   position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  border: 2px solid rgba(0, 0, 0, 0);
+  transition: 0.4s;
+}
+.btn_modal:hover::after {
+  border-color: #f1c40f;
+  width: calc(100% - 15px);
+  height: calc(100% + 15px);
+}
+
+.disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}

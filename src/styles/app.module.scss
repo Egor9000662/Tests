@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.globla_container{
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
+    width: 60%;
+    margin: 50px auto 0;
+    .container{
+    min-height: 550PX;
+    .navigation{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 100px;
+        
+        li{
+            list-style: none;
+            a{
+                font-size: 18px;
+                display: inline-block;
+                color:grey;
+                text-decoration: none;
+                height: 30px;
+            
+            }
+          a:hover{
+              color:  darkblue;
+          }
+        }
+       
+    }
+    .navigation li  a.chosen{
+        border-bottom: 2px darkblue solid; 
+    }
+
+
+      }
+      .box_form_id_users{
+
+        color: grey;
+        display: flex;
+        flex-direction: column;
+        input {
+          margin-top: 10px;
+          padding: 10px;
+          border: none;
+          border-bottom: 1px black solid;
+          outline: none;
+        }
+      }
+      .box_title {
+        display: flex;
+        justify-content: end;
+        margin-bottom: 25px;
+        p{
+          width: 95%;
+          background-color: rgb(67, 67, 201);
+          height: 35px;
+          padding: 6px 0 0 15px;
+          color: white;
+        }
+    }
+}
